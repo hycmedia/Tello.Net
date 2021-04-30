@@ -13,11 +13,14 @@ namespace Tello.Net.Demo
             connection.Connect("192.168.10.1", 8889);
 
             var drone = new TelloDrone(connection);
-            drone.EnableSdk();
             drone.SendCommand(new TakeoffCommand());
             drone.Wait(1000);
-            drone.SendCommand(new ForwardCommand().AddParameter(20));
+            drone.SendCommand(new RcCommand(0, 60, 0, 0));
             drone.Wait(1000);
+            drone.SendCommand(new RcCommand(0, 0, 0, 0));
+            drone.Wait(1000);
+            drone.SendCommand(new RcCommand(0, 0, 0, 50));
+            drone.Wait(2000);
             drone.SendCommand(new LandCommand());
         }
     }

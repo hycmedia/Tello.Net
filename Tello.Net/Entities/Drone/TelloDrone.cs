@@ -17,20 +17,21 @@ namespace Tello.Net.Entities.Drone
 
         public TelloDrone SendCommand(Command command)
         {
-            var commandBytes = Encoding.ASCII.GetBytes(command.Name);
-            this.Connection.UdpClient.Send(commandBytes, commandBytes.Length);
+            this.EnableSdk();
+            this.SendString(command.Name);
 
             return this;
         }
 
-        public void SendCommand(object v)
+        private void SendString(string text)
         {
-            throw new NotImplementedException();
+            var commandBytes = Encoding.ASCII.GetBytes(text);
+            this.Connection.UdpClient.Send(commandBytes, commandBytes.Length);
         }
 
         public void EnableSdk()
         {
-            this.SendCommand(new SdkCommand());
+            this.SendString(new SdkCommand().Name);
         }
 
         public TelloDrone Wait(int milliseconds)

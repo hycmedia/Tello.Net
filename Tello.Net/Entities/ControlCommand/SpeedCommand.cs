@@ -1,10 +1,8 @@
 ﻿using System;
 namespace Tello.Net.Entities.ControlCommand
 {
-    public class SpeedCommand
+    public class SpeedCommand : Command
     {
-        public SpeedCommand()
-        {
-        }
+        public override string Name { get; set; } = "speed";
     }
 }

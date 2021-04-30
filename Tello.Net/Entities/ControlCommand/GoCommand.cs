@@ -1,10 +1,8 @@
 ﻿using System;
 namespace Tello.Net.Entities.ControlCommand
 {
-    public class GoCommand
+    public class GoCommand : Command
     {
-        public GoCommand()
-        {
-        }
+        public override string Name { get; set; } = "go";
     }
 }
