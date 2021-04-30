@@ -7,14 +7,18 @@ namespace Tello.Net.Entities.ControlCommand
     {
         public abstract string Name { get; set; }
 
-        public void AddParameter(string parameter)
+        public Command AddParameter(string parameter)
         {
             this.Name += $" {parameter}";
+
+            return this;
         }
 
-        public void AddParameter(int parameter)
+        public Command AddParameter(int parameter)
         {
             this.AddParameter(parameter.ToString());
-        } 
+
+            return this;
+        }
     }
 }

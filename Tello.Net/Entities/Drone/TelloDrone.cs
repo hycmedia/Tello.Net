@@ -23,6 +23,11 @@ namespace Tello.Net.Entities.Drone
             return this;
         }
 
+        public void SendCommand(object v)
+        {
+            throw new NotImplementedException();
+        }
+
         public void EnableSdk()
         {
             this.SendCommand(new SdkCommand());
