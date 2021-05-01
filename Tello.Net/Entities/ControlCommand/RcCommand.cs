@@ -5,9 +5,8 @@ namespace Tello.Net.Entities.ControlCommand
     {
         public override string Name { get; set; } = "rc";
 
-        public RcCommand(int x, int y, int z, int yaw)
+        public RcCommand(int x, int y, int z, int yaw) : base(x, y, z, yaw)
         {
-            this.Name += $" {x} {y} {z} {yaw}";
         }
     }
 }

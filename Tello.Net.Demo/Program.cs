@@ -15,12 +15,9 @@ namespace Tello.Net.Demo
             var drone = new TelloDrone(connection);
             drone.SendCommand(new TakeoffCommand());
             drone.Wait(1000);
-            drone.SendCommand(new RcCommand(0, 60, 0, 0));
+            drone.SendCommand(new RcCommand(0, 50, 0, 0));
             drone.Wait(1000);
             drone.SendCommand(new RcCommand(0, 0, 0, 0));
-            drone.Wait(1000);
-            drone.SendCommand(new RcCommand(0, 0, 0, 50));
-            drone.Wait(2000);
             drone.SendCommand(new LandCommand());
         }
     }

@@ -8,14 +8,14 @@ namespace Tello.Net.Entities.Connection
     {
         public bool Connected
         {
-            get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
+            get;
+            set;
         }
 
         public string IpAddress
         {
-            get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
+            get;
+            set;
         }
 
         public UdpClient UdpClient { get; set; }
